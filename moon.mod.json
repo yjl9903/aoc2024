@@ -1,10 +1,13 @@
 {
   "name": "yjl9903/aoc2024",
   "version": "0.1.0",
-  "readme": "README.md",
-  "repository": "",
-  "license": "MIT",
-  "keywords": [],
   "description": "",
-  "source": "src"
+  "keywords": [],
+  "repository": "https://github.com/yjl9903/aoc2024",
+  "license": "MIT",
+  "readme": "README.md",
+  "source": "src",
+  "deps": {
+    "moonbitlang/x": "0.4.10"
+  }
 }
