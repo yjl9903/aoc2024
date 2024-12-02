@@ -8,7 +8,15 @@ See [Advent of Code 2024](https://adventofcode.com/2024).
 
 ## Difficulty Rank
 
-> WIP
+Medium Hard: ?
+
+Medium: ?
+
+Medium Easy: ?
+
+Easy: ?
+
+Very Easy: 1, 2
 
 ## License
 
