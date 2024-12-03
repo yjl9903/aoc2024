@@ -1,3 +1,3 @@
-pub fn solve_day06_hard() -> Unit {
-
+pub fn solve_day06_hard(input : Input) -> Output {
+  panic()
 }
