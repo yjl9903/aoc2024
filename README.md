@@ -16,7 +16,7 @@ Medium Easy: ?
 
 Easy: ?
 
-Very Easy: 1, 2
+Very Easy: 1, 2, 3, 4
 
 ## License
 

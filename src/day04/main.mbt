@@ -10,5 +10,5 @@ typealias Input = Array[String]
 typealias Output = Int
 
 fn read_input() -> Input {
-  panic()
+  @utils.read_input_of_day(4)
 }
