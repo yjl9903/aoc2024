@@ -8,6 +8,6 @@
   "readme": "README.md",
   "source": "src",
   "deps": {
-    "moonbitlang/x": "0.4.10"
+    "moonbitlang/x": "0.4.13"
   }
 }

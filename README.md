@@ -14,7 +14,7 @@ Medium: ?
 
 Medium Easy: ?
 
-Easy: ?
+Easy: 5
 
 Very Easy: 1, 2, 3, 4
 
