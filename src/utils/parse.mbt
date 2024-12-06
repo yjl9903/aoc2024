@@ -1,9 +1,9 @@
-/// parse String to Int
+///| parse String to Int
 pub fn parse_int(t : String) -> Int {
   @strconv.parse_int?(t).unwrap()
 }
 
-/// parse String to a list of Int, with splitor " "
+///| parse String to a list of Int, with splitor " "
 pub fn parse_ints(t : String, split~ : String = " ") -> Array[Int] {
   t
   .split(split)

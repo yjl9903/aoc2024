@@ -1,3 +1,4 @@
+///|
 pub fn solve_day02_hard(input : Input) -> Output {
   let mut sum = 0
   input.each(
@@ -20,6 +21,7 @@ pub fn solve_day02_hard(input : Input) -> Output {
   sum
 }
 
+///|
 fn check_safe(a : Array[Int]) -> Bool {
   if a.length() <= 1 {
     true

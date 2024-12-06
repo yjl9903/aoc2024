@@ -5,10 +5,13 @@ test "day01" {
   println(hard)
 }
 
+///|
 typealias Input = Array[(Int, Int)]
 
+///|
 typealias Output = Int
 
+///|
 fn read_input() -> Array[(Int, Int)] {
   @utils.read_input_of_day(1).map(
     fn {

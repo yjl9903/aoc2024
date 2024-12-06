@@ -1,3 +1,4 @@
+///|
 pub fn solve_day03_hard(input : Input) -> Output {
   let mut ans = 0
   let mut enabled = true

@@ -1,3 +1,4 @@
+///|
 pub fn solve_day02_easy(input : Input) -> Output {
   let mut sum = 0
   input.each(

@@ -1,3 +1,4 @@
+///|
 pub fn solve_day01_easy(input : Input) -> Output {
   let left = input.map(fn { i => i.0 })
   let right = input.map(fn { i => i.1 })

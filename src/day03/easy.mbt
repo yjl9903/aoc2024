@@ -1,3 +1,4 @@
+///|
 pub fn solve_day03_easy(input : Input) -> Output {
   let mut ans = 0
   for input in input {

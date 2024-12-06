@@ -1,3 +1,4 @@
+///|
 pub fn solve_day04_easy(input : Input) -> Output {
   let n = input.length()
   let m = input[0].length()
