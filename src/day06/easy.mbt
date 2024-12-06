@@ -1,7 +1,5 @@
 ///|
 pub fn solve_day06_easy(input : Input) -> Output {
-  let n = input.length()
-  let m = input[0].length()
   let visited = @hashset.new()
   let cover = @hashset.new()
   let dirs = [
@@ -22,7 +20,7 @@ pub fn solve_day06_easy(input : Input) -> Output {
     }
     let nx = cur.0 + dirs[dir].0
     let ny = cur.1 + dirs[dir].1
-    if 0 <= nx && nx < n && 0 <= ny && ny < m {
+    if input.is_inside((nx, ny)) {
       if input[nx][ny] != '#' {
         cur = (nx, ny)
         continue
@@ -37,8 +35,8 @@ pub fn solve_day06_easy(input : Input) -> Output {
 
 ///|
 fn find_start(input : Input) -> (Int, Int) {
-  let n = input.length()
-  let m = input[0].length()
+  let n = input.n
+  let m = input.m
   for i = 0; i < n; i = i + 1 {
     for j = 0; j < m; j = j + 1 {
       if input[i][j] == '^' {

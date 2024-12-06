@@ -6,12 +6,15 @@ test "day06" {
 }
 
 ///|
-typealias Input = Array[Array[Char]]
+typealias Grid = @utils.Grid
+
+///|
+typealias Input = Grid
 
 ///|
 typealias Output = Int
 
 ///|
 fn read_input() -> Input {
-  @utils.read_input_of_day(6, example=false).map(fn { a => a.to_array() })
+  Grid::parse(@utils.read_input_of_day(6, example=false))
 }
