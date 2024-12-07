@@ -6,12 +6,21 @@ test "day07" {
 }
 
 ///|
-typealias Input = Array[String]
+typealias Input = Array[(Int64, Array[Int64])]
 
 ///|
-typealias Output = Int
+typealias Output = Int64
 
 ///|
 fn read_input() -> Input {
-  @utils.read_input_of_day(7, example=true)
+  @utils.read_input_of_day(7, example=false).map(
+    fn {
+      line => {
+        match line.split(": ").to_array() {
+          [lhs, rhs] => (@utils.parse_int64(lhs), @utils.parse_int64s(rhs))
+          _ => panic()
+        }
+      }
+    },
+  )
 }
