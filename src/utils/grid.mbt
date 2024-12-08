@@ -27,7 +27,7 @@ pub fn Grid::op_get(self : Grid, idx : Int) -> Array[Char] {
   self.map[idx]
 }
 
-///|
+///| Get char in pos
 pub fn Grid::get(self : Grid, pos : (Int, Int)) -> Char? {
   if self.is_inside(pos) {
     Some(self.map[pos.0][pos.1])
@@ -39,6 +39,16 @@ pub fn Grid::get(self : Grid, pos : (Int, Int)) -> Char? {
 ///| Set line of grid
 pub fn Grid::op_set(self : Grid, idx : Int, line : Array[Char]) -> Unit {
   self.map[idx] = line
+}
+
+///| Set char in pos
+pub fn Grid::set(self : Grid, pos : (Int, Int), char : Char) -> Bool {
+  if self.is_inside(pos) {
+    self.map[pos.0][pos.1] = char
+    true
+  } else {
+    false
+  }
 }
 
 ///| Check whether input pos is inside the grid
@@ -59,4 +69,26 @@ pub fn Grid::parse(t : Array[String]) -> Grid {
   }
   let x = { n, m, map }
   x
+}
+
+///|
+pub fn Grid::iter(self : Grid) -> Iter[(Int, Int, Char)] {
+  Iter::new(
+    fn(callback) {
+      let mut stop = false
+      for i in 0..<self.n {
+        for j in 0..<self.m {
+          if callback((i, j, self.map[i][j])) == IterEnd {
+            stop = true
+            break
+          }
+        }
+        if stop {
+          break IterEnd
+        }
+      } else {
+        IterContinue
+      }
+    },
+  )
 }
