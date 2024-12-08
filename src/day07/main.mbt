@@ -15,12 +15,11 @@ typealias Output = Int64
 fn read_input() -> Input {
   @utils.read_input_of_day(7, example=false).map(
     fn {
-      line => {
+      line =>
         match line.split(": ").to_array() {
           [lhs, rhs] => (@utils.parse_int64(lhs), @utils.parse_int64s(rhs))
           _ => panic()
         }
-      }
     },
   )
 }

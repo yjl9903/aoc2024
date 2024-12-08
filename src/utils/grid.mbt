@@ -6,12 +6,12 @@ pub(readonly) struct Grid {
 } derive(Eq)
 
 ///|
-impl Show for Grid with output(self, logger) {
+pub fn Grid::output(self : Grid, logger : Logger) -> Unit {
   logger.write_string(self.to_string())
 }
 
 ///|
-impl Show for Grid with to_string(self) {
+pub fn Grid::to_string(self : Grid) -> String {
   let builder = StringBuilder::new()
   for i, line in self.map.iter2() {
     if i > 0 {
@@ -57,5 +57,6 @@ pub fn Grid::parse(t : Array[String]) -> Grid {
       panic()
     }
   }
-  { n, m, map }
+  let x = { n, m, map }
+  x
 }

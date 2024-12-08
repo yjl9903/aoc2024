@@ -32,9 +32,7 @@ pub fn solve_day08_hard(input : Input) -> Output {
               anti.add(first)
               input[first.0][first.1] = '#'
             }
-            None => {
-              break
-            }
+            None => break
           }
         }
 
@@ -48,9 +46,7 @@ pub fn solve_day08_hard(input : Input) -> Output {
               anti.add(second)
               input[second.0][second.1] = '#'
             }
-            None => {
-              break
-            }
+            None => break
           }
         }
       }

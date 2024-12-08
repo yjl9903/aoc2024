@@ -5,6 +5,7 @@ test "day08" {
   println(hard)
 }
 
+///|
 typealias Grid = @utils.Grid
 
 ///|
