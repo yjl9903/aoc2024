@@ -40,7 +40,7 @@ Medium Easy: ?
 
 Easy: 5, 6, 7
 
-Very Easy: 1, 2, 3, 4
+Very Easy: 1, 2, 3, 4, 8
 
 ## Previous Years
 

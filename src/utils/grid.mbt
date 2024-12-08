@@ -30,9 +30,9 @@ pub fn Grid::op_get(self : Grid, idx : Int) -> Array[Char] {
 ///|
 pub fn Grid::get(self : Grid, pos : (Int, Int)) -> Char? {
   if self.is_inside(pos) {
-    None
-  } else {
     Some(self.map[pos.0][pos.1])
+  } else {
+    None
   }
 }
 
