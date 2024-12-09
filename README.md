@@ -38,9 +38,9 @@ Medium: ?
 
 Medium Easy: ?
 
-Easy: 5, 6, 7, 9
+Easy: 5, 6, 7
 
-Very Easy: 1, 2, 3, 4, 8
+Very Easy: 1, 2, 3, 4, 8, 9
 
 ## Previous Years
 
