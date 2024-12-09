@@ -1,4 +1,4 @@
 ///|
-pub fn solve_day25_easy() -> Unit {
-
+pub fn solve_day25_easy(input : Input) -> Output {
+  0
 }
