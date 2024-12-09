@@ -21,6 +21,9 @@ pub fn solve_day08_hard(input : Input) -> Output {
         let rhs = pos[j]
         let dx = rhs.0 - lhs.0
         let dy = rhs.1 - lhs.1
+        let g = gcd(dx.abs(), dy.abs())
+        let dx = dx / g
+        let dy = dy / g
 
         //
         let mut first = (lhs.0, lhs.1)
@@ -53,4 +56,13 @@ pub fn solve_day08_hard(input : Input) -> Output {
     }
   }
   anti.size()
+}
+
+///|
+fn gcd(a : Int, b : Int) -> Int {
+  if b == 0 {
+    a
+  } else {
+    gcd(b, a % b)
+  }
 }
