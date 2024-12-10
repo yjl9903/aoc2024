@@ -6,12 +6,15 @@ test "day10" {
 }
 
 ///|
-typealias Input = Array[String]
+typealias Grid = @utils.Grid
+
+///|
+typealias Input = Grid
 
 ///|
 typealias Output = Int
 
 ///|
 fn read_input() -> Input {
-  @utils.read_input_of_day(10, example=true)
+  Grid::parse(@utils.read_input_of_day(10, example=false))
 }
