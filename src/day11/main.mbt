@@ -6,12 +6,12 @@ test "day11" {
 }
 
 ///|
-typealias Input = Array[String]
+typealias Input = Array[Int64]
 
 ///|
-typealias Output = Int
+typealias Output = Int64
 
 ///|
 fn read_input() -> Input {
-  @utils.read_input_of_day(11, example=true)
+  @utils.parse_int64s(@utils.read_input_of_day(11, example=false)[0])
 }
