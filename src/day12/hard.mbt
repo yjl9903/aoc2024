@@ -5,7 +5,6 @@ pub fn solve_day12_hard(input : Input) -> Output {
   let mut ans = 0
   let visited = @hashset.new()
   fn calc(sx : Int, sy : Int) {
-    let dir = [(-1, 0), (0, 1), (1, 0), (0, -1)]
     let color = input[sx][sy]
     let queue = @queue.new()
     let current = @hashset.new()
@@ -17,14 +16,12 @@ pub fn solve_day12_hard(input : Input) -> Output {
     while not(queue.is_empty()) {
       area += 1
       let cur = queue.pop().unwrap()
-      for d in dir {
-        let nx = cur.0 + d.0
-        let ny = cur.1 + d.1
-        if input.is_inside((nx, ny)) && input[nx][ny] == color {
-          if not(visited.contains((nx, ny))) {
-            visited.add((nx, ny))
-            current.add((nx, ny))
-            queue.push((nx, ny))
+      for np in input.near_pos(cur) {
+        if input.get(np) == Some(color) {
+          if not(visited.contains(np)) {
+            visited.add(np)
+            current.add(np)
+            queue.push(np)
           }
         }
       }

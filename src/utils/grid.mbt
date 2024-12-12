@@ -92,3 +92,18 @@ pub fn Grid::iter(self : Grid) -> Iter[(Int, Int, Char)] {
     },
   )
 }
+
+///|
+pub fn Grid::near_pos(
+  self : Grid,
+  pos : (Int, Int),
+  skip_outside~ : Bool = true
+) -> Iter[(Int, Int)] {
+  let four_dirs = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+  let iter = four_dirs.iter().map(fn { d => (pos.0 + d.0, pos.1 + d.1) })
+  if skip_outside {
+    iter.filter(fn { p => self.is_inside(p) })
+  } else {
+    iter
+  }
+}
