@@ -1,7 +1,14 @@
 test "day13" {
-  let easy = solve_day13_easy(read_input())
+  let easy = solve_day13_easy(read_input(example=false))
   println(easy)
-  let hard = solve_day13_hard(read_input())
+  let hard = solve_day13_hard(read_input(example=false))
+  println(hard)
+}
+
+test "day13 - example" {
+  let easy = solve_day13_easy(read_input(example=true))
+  println(easy)
+  let hard = solve_day13_hard(read_input(example=true))
   println(hard)
 }
 
@@ -19,8 +26,8 @@ struct Machine {
 } derive(Show)
 
 ///|
-fn read_input() -> Input {
-  let input = @utils.read_input_of_day(example=false)
+fn read_input(example~ : Bool) -> Input {
+  let input = @utils.read_input_of_day(example~)
   let button_re = @regexp.compile?("Button [AB]: X\\+(\\d+), Y\\+(\\d+)").unwrap()
   let price_re = @regexp.compile?("Prize: X=(\\d+), Y=(\\d+)").unwrap()
   let result = []
