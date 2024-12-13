@@ -13,5 +13,5 @@ typealias Output = Int64
 
 ///|
 fn read_input() -> Input {
-  @utils.parse_int64s(@utils.read_input_of_day(11, example=false)[0])
+  @utils.parse_int64s(@utils.read_input_of_day(example=false)[0])
 }

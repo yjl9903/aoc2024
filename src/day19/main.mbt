@@ -13,5 +13,5 @@ typealias Output = Int
 
 ///|
 fn read_input() -> Input {
-  @utils.read_input_of_day(19, example=true)
+  @utils.read_input_of_day(example=true)
 }

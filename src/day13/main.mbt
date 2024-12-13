@@ -20,7 +20,7 @@ struct Machine {
 
 ///|
 fn read_input() -> Input {
-  let input = @utils.read_input_of_day(13, example=false)
+  let input = @utils.read_input_of_day(example=false)
   let button_re = @regexp.compile?("Button [AB]: X\\+(\\d+), Y\\+(\\d+)").unwrap()
   let price_re = @regexp.compile?("Prize: X=(\\d+), Y=(\\d+)").unwrap()
   let result = []

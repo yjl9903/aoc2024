@@ -13,5 +13,5 @@ typealias Output = Int
 
 ///|
 fn read_input() -> Input {
-  @utils.read_input_of_day(2).map(fn { t => @utils.parse_ints(t) })
+  @utils.read_input_of_day(example=false).map(fn { t => @utils.parse_ints(t) })
 }

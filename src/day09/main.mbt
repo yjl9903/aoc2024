@@ -13,7 +13,7 @@ typealias Output = Int64
 
 ///|
 fn read_input() -> Input {
-  @utils.read_input_of_day(9, example=false)[0]
+  @utils.read_input_of_day(example=false)[0]
   .to_array()
   .map(fn { c => c.to_int() - '0'.to_int() })
 }

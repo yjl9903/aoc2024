@@ -13,7 +13,7 @@ typealias Output = Int
 
 ///|
 fn read_input() -> Array[(Int, Int)] {
-  @utils.read_input_of_day(1).map(
+  @utils.read_input_of_day(example=false).map(
     fn {
       t => {
         let t = @utils.parse_ints(t)

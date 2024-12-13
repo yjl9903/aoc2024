@@ -13,7 +13,7 @@ typealias Output = Int
 
 ///|
 fn read_input() -> Input {
-  let lines = @utils.read_input_of_day(5, example=false)
+  let lines = @utils.read_input_of_day(example=false)
   let edges = []
   let updates = []
   let mut i = 0

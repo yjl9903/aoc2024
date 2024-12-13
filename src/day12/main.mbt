@@ -16,5 +16,5 @@ typealias Output = Int
 
 ///|
 fn read_input() -> Input {
-  Grid::parse(@utils.read_input_of_day(12, example=false))
+  Grid::parse(@utils.read_input_of_day(example=false))
 }

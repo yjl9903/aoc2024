@@ -13,7 +13,7 @@ typealias Output = Int64
 
 ///|
 fn read_input() -> Input {
-  @utils.read_input_of_day(7, example=false).map(
+  @utils.read_input_of_day(example=false).map(
     fn {
       line =>
         match line.split(": ").to_array() {
