@@ -5,6 +5,15 @@ pub(readonly) struct Grid {
   map : Array[Array[Char]]
 } derive(Eq)
 
+///| Create a n x m grid
+pub fn Grid::new(n : Int, m : Int, init~ : Char = '0') -> Grid {
+  let map = []
+  for i in 0..<n {
+    map.push(Array::make(m, init))
+  }
+  { n, m, map }
+}
+
 ///|
 pub fn Grid::output(self : Grid, logger : Logger) -> Unit {
   logger.write_string(self.to_string())
@@ -17,7 +26,9 @@ pub fn Grid::to_string(self : Grid) -> String {
     if i > 0 {
       builder.write_char('\n')
     }
-    builder.write_string(line.to_string())
+    for c in line {
+      builder.write_char(c)
+    }
   }
   builder.to_string()
 }
