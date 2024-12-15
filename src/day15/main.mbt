@@ -13,12 +13,20 @@ test "day15 - example" {
 }
 
 ///|
-typealias Input = Array[String]
+typealias Grid = @utils.Grid
+
+///|
+typealias Input = (Grid, Array[Char])
 
 ///|
 typealias Output = Int
 
 ///|
 fn read_input(example~ : Bool) -> Input {
-  @utils.read_input_of_day(example~)
+  let input = @utils.read_input_of_day(example~)
+  let idx = input.search_by(fn { l => l.length() == 0 }).unwrap()
+  let (grid, cmd) = input.split_at(idx)
+  let grid = Grid::parse(grid)
+  let cmd = String::concat(cmd, separator="").to_array()
+  (grid, cmd)
 }
