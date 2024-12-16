@@ -5,6 +5,9 @@ pub(readonly) struct Grid {
   map : Array[Array[Char]]
 } derive(Eq)
 
+///| Position abstraction
+pub typealias Pos = (Int, Int)
+
 ///| Create a n x m grid
 pub fn Grid::new(n : Int, m : Int, init~ : Char = '0') -> Grid {
   let map = []
@@ -39,7 +42,7 @@ pub fn Grid::op_get(self : Grid, idx : Int) -> Array[Char] {
 }
 
 ///| Get char in pos
-pub fn Grid::get(self : Grid, pos : (Int, Int)) -> Char? {
+pub fn Grid::get(self : Grid, pos : Pos) -> Char? {
   if self.is_inside(pos) {
     Some(self.map[pos.0][pos.1])
   } else {
@@ -53,7 +56,7 @@ pub fn Grid::op_set(self : Grid, idx : Int, line : Array[Char]) -> Unit {
 }
 
 ///| Set char in pos
-pub fn Grid::set(self : Grid, pos : (Int, Int), char : Char) -> Bool {
+pub fn Grid::set(self : Grid, pos : Pos, char : Char) -> Bool {
   if self.is_inside(pos) {
     self.map[pos.0][pos.1] = char
     true
@@ -63,7 +66,7 @@ pub fn Grid::set(self : Grid, pos : (Int, Int), char : Char) -> Bool {
 }
 
 ///| Check whether input pos is inside the grid
-pub fn Grid::is_inside(self : Grid, pos : (Int, Int)) -> Bool {
+pub fn Grid::is_inside(self : Grid, pos : Pos) -> Bool {
   let (x, y) = pos
   0 <= x && x < self.n && 0 <= y && y < self.m
 }
@@ -104,17 +107,22 @@ pub fn Grid::iter(self : Grid) -> Iter[(Int, Int, Char)] {
   )
 }
 
-///|
+///| Iterate next 4 near pos
 pub fn Grid::near_pos(
   self : Grid,
-  pos : (Int, Int),
+  pos : Pos,
   skip_outside~ : Bool = true
-) -> Iter[(Int, Int)] {
+) -> Iter[Pos] {
   let four_dirs = [(-1, 0), (0, 1), (1, 0), (0, -1)]
-  let iter = four_dirs.iter().map(fn { d => (pos.0 + d.0, pos.1 + d.1) })
+  let iter = four_dirs.iter().map(fn { d => Grid::next(pos, d) })
   if skip_outside {
     iter.filter(fn { p => self.is_inside(p) })
   } else {
     iter
   }
+}
+
+///|
+pub fn Grid::next(pos : Pos, dir : Pos) -> Pos {
+  (pos.0 + dir.0, pos.1 + dir.1)
 }
