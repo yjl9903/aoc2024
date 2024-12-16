@@ -86,6 +86,20 @@ pub fn Grid::parse(t : Array[String]) -> Grid {
 }
 
 ///|
+pub fn find_pos(self : Grid, target : Char) -> Pos? {
+  let n = self.n
+  let m = self.m
+  for i in 0..<n {
+    for j in 0..<m {
+      if self.map[i][j] == target {
+        return Some((i, j))
+      }
+    }
+  }
+  None
+}
+
+///|
 pub fn Grid::iter(self : Grid) -> Iter[(Int, Int, Char)] {
   Iter::new(
     fn(callback) {
