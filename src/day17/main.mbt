@@ -13,12 +13,32 @@ test "day17 - example" {
 }
 
 ///|
-typealias Input = Array[String]
+struct Program {
+  a : Int64
+  b : Int64
+  c : Int64
+  code : Array[Int64]
+}
 
 ///|
-typealias Output = Int
+typealias Input = Program
+
+///|
+typealias Output = String
 
 ///|
 fn read_input(example~ : Bool) -> Input {
-  @utils.read_input_of_day(example~)
+  let line = @utils.read_input_of_day(example~)
+  let a = line[0].substring(start="Register A: ".length())
+  let b = line[1].substring(start="Register B: ".length())
+  let c = line[2].substring(start="Register C: ".length())
+  {
+    a: @utils.parse_int64(a),
+    b: @utils.parse_int64(b),
+    c: @utils.parse_int64(c),
+    code: @utils.parse_int64s(
+      line[4].substring(start="Program: ".length()),
+      split=",",
+    ),
+  }
 }
