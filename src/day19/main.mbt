@@ -13,12 +13,15 @@ test "day19 - example" {
 }
 
 ///|
-typealias Input = Array[String]
+typealias Input = (Array[String], Array[String])
 
 ///|
 typealias Output = Int
 
 ///|
 fn read_input(example~ : Bool) -> Input {
-  @utils.read_input_of_day(example~)
+  let lines = @utils.read_input_of_day(example~)
+  let patterns = lines[0].split(", ").to_array()
+  let targets = lines.iter().drop(2).to_array()
+  (patterns, targets)
 }
