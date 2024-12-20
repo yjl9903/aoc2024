@@ -38,7 +38,7 @@ Medium Hard: ?
 
 Medium: ?
 
-Medium Easy: 18, 19
+Medium Easy: 18, 19, 20
 
 Easy: 5, 6, 7, 10, 11, 12, 13, 15, 16
 
