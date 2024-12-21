@@ -16,7 +16,7 @@ test "day21 - example" {
 typealias Input = Array[String]
 
 ///|
-typealias Output = Int
+typealias Output = Int64
 
 ///|
 fn read_input(example~ : Bool) -> Input {
