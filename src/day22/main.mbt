@@ -13,12 +13,12 @@ test "day22 - example" {
 }
 
 ///|
-typealias Input = Array[String]
+typealias Input = Array[Int64]
 
 ///|
-typealias Output = Int
+typealias Output = Int64
 
 ///|
 fn read_input(example~ : Bool) -> Input {
-  @utils.read_input_of_day(example~)
+  @utils.read_input_of_day(example~).map(fn { t => @utils.parse_int64(t) })
 }
