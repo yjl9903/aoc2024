@@ -13,12 +13,42 @@ test "day24 - example" {
 }
 
 ///|
-typealias Input = Array[String]
+enum Gate {
+  AND
+  OR
+  XOR
+} derive(Show, Eq, Hash)
 
 ///|
-typealias Output = Int
+typealias Input = (Array[(String, Int)], Array[(String, Gate, String, String)])
+
+///|
+typealias Output = Int64
 
 ///|
 fn read_input(example~ : Bool) -> Input {
-  @utils.read_input_of_day(example~)
+  let input = @utils.read_input_of_day(example~)
+  let mut i = 0
+  let regs = []
+  let cons = []
+  while i < input.length() && input[i] != "" {
+    let line = input[i]
+    let line = line.split(": ").to_array()
+    regs.push((line[0], @utils.parse_int(line[1])))
+    i += 1
+  }
+  i += 1
+  while i < input.length() {
+    let line = input[i]
+    let line = line.split(" ").to_array()
+    let op = match line[1] {
+      "AND" => AND
+      "OR" => OR
+      "XOR" => XOR
+      _ => panic()
+    }
+    cons.push((line[0], op, line[2], line[4]))
+    i += 1
+  }
+  (regs, cons)
 }

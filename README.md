@@ -32,7 +32,7 @@ moon test --target wasm-gc -p yjl9903/aoc2024/day01 -f main.mbt -i 0
 
 ## Difficulty Rank
 
-Mystery: 14, 17, 21
+Mystery: 14, 17, 21, 24
 
 Medium Hard: ?
 
